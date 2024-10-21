@@ -1,8 +1,14 @@
 import React from 'react';
-import './AlarmView.css';
+import '../../Styles/AlarmView.css';
 
 
-
+const AlarmView = () => {
+    return (
+        <div className='Alarm-view'>
+            
+        </div>
+    )
+} 
 
 
 

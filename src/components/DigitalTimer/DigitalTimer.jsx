@@ -1,11 +1,13 @@
 import React from 'react';
-import './DigitalTimer.css';
+import '../../Styles/DigitalTimer.css';
 
-
-
-
-
-
+const DigitalTimer = () => {
+    return (
+        <div className='Digital'>
+            
+        </div>
+    )
+} 
 
 
 

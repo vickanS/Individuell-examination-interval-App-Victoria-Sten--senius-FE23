@@ -1,11 +1,17 @@
 import React from 'react';
-import './Menu.css';
+import '../../Styles/Menu.css';
 
 
 
 
 
-
+const Menu = () => {
+    return (
+        <div className='timermenu'>
+            
+        </div>
+    )
+} 
 
 
 
