@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Router>
-      <div style={{ backgroundColor: 'black', minHeight: '100vh'}}>
+      <div >
         <Routes>
           < Route path='/' element={<LoadingScreen />} />
           < Route path='set-timer' element={<SetTimer />} /> 
