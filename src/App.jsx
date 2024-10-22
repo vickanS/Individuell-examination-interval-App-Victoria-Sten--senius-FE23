@@ -14,13 +14,44 @@ function App() {
     <Router>
       <div >
         <Routes>
-          < Route path='/' element={<LoadingScreen />} />
-          < Route path='set-timer' element={<SetTimer />} /> 
-          < Route path='analog-timer' element={<AnalogTimer />} /> 
-          < Route path='digital-timer' element={<DigitalTimer />} /> 
-          < Route path='Alarm-view' element={<AlarmView />} /> 
-        </Routes> 
-          <Menu />
+          <Route path='/' element={<LoadingScreen />} />
+          <Route 
+            path='set-timer' 
+            element={
+              <>
+                <SetTimer />
+                <Menu />
+              </>
+            } 
+          /> 
+          <Route 
+            path='analog-timer' 
+            element={
+              <>
+                <AnalogTimer />
+                <Menu />
+              </>
+            } 
+          /> 
+          <Route 
+            path='digital-timer'
+            element={
+              <>
+                <DigitalTimer />
+                <Menu />
+              </>
+            } 
+          /> 
+          <Route 
+            path='Alarm-view'
+            element={
+              <>
+                <AlarmView />
+                <Menu />
+              </>
+            } 
+          /> 
+        </Routes>
       </div>
     </Router>
   )
