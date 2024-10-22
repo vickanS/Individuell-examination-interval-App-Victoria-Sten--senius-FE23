@@ -1,38 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState  } from 'react';
+import { motion } from 'framer-motion';
+import { useTimer } from '../../HandleTimer/HandleTimer';
+import { useNavigate } from 'react-router-dom';
+import menuicon from '../../assets/menuicon.svg'
 import '../../Styles/SetTimer.css';
-import Timer from 'easytimer.js';
+
 
 const SetTimer = () => {
-    const [time, setTime] = useState('00:00:00');
+    const {time, setTime} = useTimer();
+    const navigate = useNavigate();
   
-    useEffect(() => {
-      const timer = new Timer();
+    const increaseTime = () => {
+      if (time < 60) {
+        setTime(prevTime => prevTime + 1)
+      }
+    };
       
-      // Starta en timer som räknar upp
-      timer.start();
+    const decreaseTime = () => {
+      if (time > 1) {
+        setTime(prevTime => prevTime - 1)
+      }
+    }
   
-      // Uppdatera tiden vid varje tick
-      timer.addEventListener('secondsUpdated', () => {
-        setTime(timer.getTimeValues().toString());
-      });
-  
-      // Rensa upp efter komponenten när den unmountas
-      return () => {
-        timer.stop();
-      };
-    }, []);
+    const handleStartTimer = () => {
+      navigate(`/analog-timer?time=${time}`)
+    }
   
     return (
       <div className="set-timer">
-        <h2>Set Timer</h2>
-        <p>{time}</p>
+        <h2>Set Your Timer</h2>
+        <div className='timer'>
+          <button className='inc-dec' onClick={decreaseTime}>-</button>
+          <h1>{time}</h1>
+          <button className='inc-dec' onClick={increaseTime}>+</button>
+        </div>
+        <p>Minutes</p>
+        <button onClick={handleStartTimer}>Start timer</button>
       </div>
     );
   };
-
-
-
-
 
 
 

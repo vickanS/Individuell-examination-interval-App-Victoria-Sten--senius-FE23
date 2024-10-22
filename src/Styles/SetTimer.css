@@ -1,0 +1,32 @@
+.inc-dec {
+    border: none;
+    background-color: white;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+h1 {
+    margin-bottom: -15px;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    color: lightgray;
+    margin-top: 0;
+    
+}
+
+button {
+    font-size: large;
+    font-weight: bold;
+    margin-top: 50px;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+}
