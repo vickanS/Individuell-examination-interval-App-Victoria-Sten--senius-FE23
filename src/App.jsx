@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { TimerProvider, useTimer } from './HandleTimer/HandleTimer'
+import { TimerProvider } from './HandleTimer/HandleTimer'
 import LoadingScreen from './pages/LoadingScreen/LoadingScreen'
 import SetTimer from './pages/SetTimer/SetTimer'
 import AnalogTimer from './components/AnalogTimer/AnalogTimer'
@@ -21,8 +21,8 @@ function App() {
               path='set-timer' 
               element={
                 <>
-                  <SetTimer />
                   <Menu />
+                  <SetTimer />
                 </>
               } 
             /> 
@@ -30,8 +30,8 @@ function App() {
               path='analog-timer' 
               element={
                 <>
-                  <AnalogTimer />
                   <Menu />
+                  <AnalogTimer />
                 </>
               } 
             /> 
@@ -39,8 +39,8 @@ function App() {
               path='digital-timer'
               element={
                 <>
-                  <DigitalTimer />
                   <Menu />
+                  <DigitalTimer />
                 </>
               } 
             /> 
@@ -48,8 +48,8 @@ function App() {
               path='Alarm-view'
               element={
                 <>
-                  <AlarmView />
                   <Menu />
+                  <AlarmView />
                 </>
               } 
             /> 
