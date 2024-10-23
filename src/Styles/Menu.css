@@ -1,11 +1,41 @@
-.timermenu {
+  .menu-container {
     position: absolute;
-    top: 10px; 
-    left: 10px; 
-    z-index: 1000; 
-  }
-  
-  .menu-icon {
-    width: 35px; 
-    height: auto; 
-  }
+    top: 10px;
+    left: 10px;
+}
+
+.menu-icon {
+    width: 35px;
+    height: auto;
+}
+
+.menu-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.menu-slide ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-slide li {
+    margin: 20px 0;
+}
+
+.menu-slide a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
