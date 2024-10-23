@@ -1,30 +1,29 @@
-import React, { useState  } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 import { useTimer } from '../../HandleTimer/HandleTimer';
-import { useNavigate } from 'react-router-dom';
-import menuicon from '../../assets/menuicon.svg'
 import '../../Styles/SetTimer.css';
 
 
 const SetTimer = () => {
-    const {time, setTime} = useTimer();
-    const navigate = useNavigate();
+    const {setTime} = useTimer();
+    const [time, setLocalTime] = useState(0);
+    const [ isMenuOpen, setIsMenuOpen] = useState(false);
   
     const increaseTime = () => {
       if (time < 60) {
-        setTime(prevTime => prevTime + 1)
+        setLocalTime(prevTime => prevTime + 1)
       }
     };
       
     const decreaseTime = () => {
       if (time > 1) {
-        setTime(prevTime => prevTime - 1)
+        setLocalTime(prevTime => prevTime - 1)
       }
     }
   
     const handleStartTimer = () => {
-      navigate(`/analog-timer?time=${time}`)
-    }
+      setTime(time);
+      setIsMenuOpen(true)
+  };
   
     return (
       <div className="set-timer">
@@ -39,7 +38,5 @@ const SetTimer = () => {
       </div>
     );
   };
-
-
 
 export default SetTimer;
