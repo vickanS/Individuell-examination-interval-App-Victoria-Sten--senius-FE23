@@ -1,0 +1,42 @@
+.analog-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.analogtimer {
+    position: relative;
+    width: 200px; 
+    height: 200px; 
+    border: 8px solid #333; 
+    border-radius: 50%; 
+    background-color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: #333; 
+    transform-origin: bottom; 
+}
+
+.minute-hand {
+    width: 6px; 
+    height: 30%; 
+}
+
+.second-hand {
+    width: 2px; 
+    height: 40%; 
+    background-color: red; 
+}
