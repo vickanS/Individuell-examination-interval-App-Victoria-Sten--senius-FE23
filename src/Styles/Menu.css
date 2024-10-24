@@ -1,12 +1,16 @@
   .menu-container {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    position: relative;
+    
 }
 
 .menu-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
     width: 35px;
     height: auto;
+    z-index: 10;
+    fill: black;
 }
 
 .menu-slide {
@@ -22,7 +26,7 @@
     color: white;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 100;
+    z-index: 5;
 }
 
 .menu-slide ul {

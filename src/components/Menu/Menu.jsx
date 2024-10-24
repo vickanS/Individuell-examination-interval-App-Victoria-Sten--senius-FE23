@@ -13,11 +13,13 @@ const Menu = () => {
 
     return (
         <div className='menu-container'>
-            <img
+            <motion.img
                 src={menuicon}
                 alt='menu icon'
                 className='menu-icon'
                 onClick={toggleMenu}
+                style={{ filter: isOpen ? 'invert(1)' : 'invert(0)' }}  
+                transition={{ delay: 0.3 }} 
             />
 
             {isOpen && (
@@ -26,7 +28,7 @@ const Menu = () => {
                     initial={{ x: '-100%' }}
                     animate={{ x: 0 }}
                     exit={{ x: '-100%' }}
-                    transition={{ delay: 0.3 }}
+                    transition={{ delay: 0.2 }}
                 >
                     <ul>
                         <h1>Timers</h1>
