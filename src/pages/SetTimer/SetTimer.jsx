@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTimer } from '../../HandleTimer/HandleTimer';
 import '../../Styles/SetTimer.css';
 
 
-const SetTimer = () => {
+const SetTimer = ({setView}) => {
     const {setTime} = useTimer();
     const [time, setLocalTime] = useState(0);
     const [ isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,10 +21,17 @@ const SetTimer = () => {
     }
   
     const handleStartTimer = () => {
+      if (time > 0) {
       setTime(time);
       setIsMenuOpen(true)
+    }
   };
-  
+
+    useEffect(() => {
+      setLocalTime(0);
+      setTime(0);
+  }, [setView]);
+    
     return (
       <div className="set-timer">
         <h2>Set Your Timer</h2>
