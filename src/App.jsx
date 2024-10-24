@@ -9,6 +9,7 @@ import AlarmView from './components/AlarmView/AlarmView'
 import Menu from './components/Menu/Menu'
 import './index.css'
 
+
 function App() {
 
   return (
