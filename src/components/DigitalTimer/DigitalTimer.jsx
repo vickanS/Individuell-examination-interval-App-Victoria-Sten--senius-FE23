@@ -39,7 +39,7 @@ const DigitalTimer = () => {
         <div className="digital-timer">
             <h2>Digital Timer</h2>
             <div className="timer-display">
-                {minutes}:{('0' + seconds).slice(-2)}
+                <h1>{minutes}:{('0' + seconds).slice(-2)}</h1>
             </div>
             <motion.button onClick={handleAbort}>Abort Timer</motion.button>
         </div>
