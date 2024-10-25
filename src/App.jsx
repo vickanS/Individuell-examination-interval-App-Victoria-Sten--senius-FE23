@@ -46,10 +46,9 @@ function App() {
               } 
             /> 
             <Route 
-              path='Alarm-view'
+              path='alarm-view'
               element={
                 <>
-                  <Menu />
                   <AlarmView />
                 </>
               } 
