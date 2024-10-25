@@ -4,7 +4,7 @@ import '../../Styles/SetTimer.css';
 
 
 const SetTimer = ({setView}) => {
-    const {setTime} = useTimer();
+    const {startTimer} = useTimer();
     const [time, setLocalTime] = useState(0);
     const [ isMenuOpen, setIsMenuOpen] = useState(false);
   
@@ -22,14 +22,14 @@ const SetTimer = ({setView}) => {
   
     const handleStartTimer = () => {
       if (time > 0) {
-      setTime(time);
+      startTimer(time);
       setIsMenuOpen(true)
     }
   };
 
     useEffect(() => {
       setLocalTime(0);
-      setTime(0);
+      startTimer(0);
   }, [setView]);
     
     return (
