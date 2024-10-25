@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useTimer } from '../../HandleTimer/HandleTimer';
 import '../../Styles/DigitalTimer.css';
 import { motion } from 'framer-motion';
@@ -18,6 +18,12 @@ const DigitalTimer = () => {
         handleAbort();
         navigate('/set-timer'); 
     };
+
+    useEffect(() => {
+        if (time <= 0) {
+            navigate('/alarm-view'); 
+        }
+    }, [time, navigate]);
 
     return (
         <div className="digital-timer">

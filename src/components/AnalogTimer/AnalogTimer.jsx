@@ -26,6 +26,12 @@ const AnalogTimer = () => {
         }
     }, [time]);
 
+    useEffect(() => {
+        if (time <= 0) {
+            navigate('/alarm-view'); 
+        }
+    }, [time, navigate]);
+
     const abortTimer = () => {
         handleAbort();
         navigate('/set-timer'); 
