@@ -31,6 +31,11 @@ const Menu = () => {
                     transition={{ delay: 0.2 }}
                 >
                     <ul>
+                        <li>
+                            <Link to= '/' onClick={toggleMenu}>
+                            Close Interval App
+                            </Link>
+                        </li>
                         <h1>Timers</h1>
                         <li>
                             <Link to='/analog-timer' onClick={toggleMenu}>
