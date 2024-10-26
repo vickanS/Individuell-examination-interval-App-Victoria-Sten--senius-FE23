@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTimer } from '../../HandleTimer/HandleTimer';
+import { motion } from 'framer-motion';
 import '../../Styles/SetTimer.css';
 
 
@@ -7,6 +8,7 @@ const SetTimer = ({setView}) => {
     const {startTimer} = useTimer();
     const [time, setLocalTime] = useState(0);
     const [ isMenuOpen, setIsMenuOpen] = useState(false);
+    const [buttonText, setButtonText] = useState('Start Timer')
   
     const increaseTime = () => {
       if (time < 60) {
@@ -24,12 +26,14 @@ const SetTimer = ({setView}) => {
       if (time > 0) {
       startTimer(time);
       setIsMenuOpen(true)
+      setButtonText('Timer Started')
     }
   };
 
     useEffect(() => {
       setLocalTime(0);
       startTimer(0);
+      setButtonText('Start Timer')
   }, [setView]);
     
     return (
@@ -41,7 +45,15 @@ const SetTimer = ({setView}) => {
           <button className='inc-dec' onClick={increaseTime}>+</button>
         </div>
         <p>Minutes</p>
-        <button onClick={handleStartTimer}>Start timer</button>
+        <motion.button
+                onClick={handleStartTimer}
+                initial={{ opacity: 1 }} 
+                animate={{ opacity: 1 }} 
+                exit={{ opacity: 0 }} 
+                transition={{ duration: 0.5 }} 
+            >
+                {buttonText} 
+            </motion.button>
       </div>
     );
   };
