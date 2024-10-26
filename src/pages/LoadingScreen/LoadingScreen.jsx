@@ -7,22 +7,17 @@ const LoadingScreen = () => {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
+    setTimeout(() => {
     navigate('/set-timer')
+  }, 500)
   };
 
     return (
-      <motion.div 
-        className="loading-screen"
-        style={{ backgroundColor: 'black', minHeight: '100vh'}}
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        transition={{duration: 0.5}}
-      >
-
+      <motion.div className="loading-screen">
         <motion.h1
           onClick={handleLogoClick}
-          initial={{scale: 1}}
           whileTap={{scale: 1.1}}
+          transition={{ duration: 0.3 }}
         >
           Interval App
         </motion.h1>
